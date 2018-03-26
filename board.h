@@ -1,11 +1,11 @@
 typedef struct board {
-    int str; //На какой строке находится пешка
-    char stl; //На каком столбце находится пешка
+    char s[2]; //На каком столбце находится пешка
     int color; //Цвет фигуры
     char tip;
 }board;
 
-void output();
+void output(board * mass);
 
+void move (board * mass);
 
-#include <stdio.h>
+int * decode(char letter, int number);
