@@ -9,3 +9,5 @@ void output(board * mass);
 void move (board * mass);
 
 int * decode(char letter, int number);
+
+int test(char letter, int number);
