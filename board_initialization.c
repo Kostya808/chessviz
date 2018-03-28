@@ -28,17 +28,5 @@ void output(board * mass){
 			mass[i*8 + j].s[0] = abc[j];
 		}
 	}
-
-      	printf ("  ABCDEFGH\n");
-	printf ("  ________\n");
-	for (i = 0; i < 8; i++)
-	{
-		printf("%d|", i+1);
-		for (j = 0; j < 8; j++)
-		{
-			printf("%c", mass[i*8 + j].tip);
-		}
-		printf ("\n");
-	}
 }
 

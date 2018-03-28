@@ -1,17 +1,22 @@
-src: main.o output.o move.o decode.o test_d.o
-	gcc -Wall -Werror -o src test_d.o decode.o move.o output.o main.o
+all: src
 
-main.o: main.c
-	gcc -Wall -Werror -c -o main.o main.c
+src: build/main.o build/board_initialization.o build/move.o build/decode.o build/output.o 
+	gcc -Wall -Werror build/main.o build/board_initialization.o build/move.o build/decode.o build/output.o -o src
 
-output.o: output_board.c
-	gcc -Wall -Werror -c -o output.o output_board.c
+build/main.o: main.c
+	gcc -Wall -Werror -c main.c -o build/main.o 
 
-move.o: move.c
-	gcc -Wall -Werror -c -o move.o move.c
+build/board_initialization.o: board_initialization.c
+	gcc -Wall -Werror -c board_initialization.c -o build/board_initialization.o 
 
-decode.o: decode.c
-	gcc -Wall -Werror -c -o decode.o decode.c
+build/move.o: move.c
+	gcc -Wall -Werror -c move.c -o build/move.o 
 
-test_d.o: test_d.c
-	gcc -Wall -Werror -c -o test_d.o test_d.c
+build/decode.o: decode.c
+	gcc -Wall -Werror -c decode.c -o build/decode.o
+
+build/output.o: output.c
+	gcc -Wall -Werror -c output.c -o build/output.o
+
+clean: 
+	rm -rf build/*.o
