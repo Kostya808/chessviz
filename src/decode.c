@@ -1,4 +1,3 @@
-#include <stdio.h>
 int * decode(char letter, int number, char letter2, int number2){
 	int i, index_letter, index_letter2;
 	static int index[4];
