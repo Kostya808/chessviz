@@ -13,7 +13,7 @@ CTEST(move_suite, dizertirstvo) // Проверка на возможность 
 	int check = move_checking(mass, n1, l1, n2, l2); 
 	
 	//THEN
-	const int expected = 1;
+	const int expected = 0;
 
 	ASSERT_EQUAL(expected, check);
 }
