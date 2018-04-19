@@ -1,4 +1,5 @@
 #include "board.h"
+#include <stdio.h>
 
 void move(board * mass, int index_letter1, int index_number1, int index_letter2, int index_number2){
         board buffer;

@@ -17,10 +17,10 @@ int main()
     printf("------------------------------------------------------------------\n");        
 	outputGL(mass);
 	while (check_win == 0)
-	{
+	{		
 		while (color == 0)
 		{ 
-			while (check_move == 0)
+			while (check_move == 0 && color == 0)
 			{
  	        	printf("___________________\n");
     	    	if (count%2 == 0)
@@ -45,6 +45,11 @@ int main()
 				check_move = move_checking(mass, index_number1, index_letter1, index_number2, index_letter2);
 				if (check_move == 0)
 					printf("Ход не возможен\n");
+				if ((check_move == 1 && color == 0) || (check_move == 0 && color == 1))
+				{
+					check_move = 0;
+					color = 0;
+				}			
 			}
 		}		
         if (check_move == 1)

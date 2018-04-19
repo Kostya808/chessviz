@@ -21,14 +21,17 @@ build/output.o: src/output.c
 build/checking.o: src/checking.c
 	gcc -Wall -Werror -c src/checking.c -o build/checking.o
 
-bin/test: build/test.o build/checking.o build/board_initialization.o build/ctest.o
-	gcc -Wall build/test.o build/checking.o build/board_initialization.o build/ctest.o -o bin/test
+bin/test: build/test.o build/checking.o build/board_initialization.o build/ctest.o build/move.o build/output.o
+	gcc -Wall build/test.o build/checking.o build/board_initialization.o build/ctest.o build/move.o build/output.o -o bin/test
 
 build/test.o: test/test.c
 	gcc -Wall -c test/test.c -o build/test.o -Ithirdparty -Isrc
 
 build/ctest.o: test/ctest.c
 	gcc -Wall -c test/ctest.c -o build/ctest.o -Ithirdparty
+
+test: bin/test
+	bin/test
 
 .PHONY: clean
 clean:
