@@ -1,4 +1,4 @@
-all: bin/prog bin/test
+all: bin/prog bin/test test
 
 bin/prog: build/main.o build/board_initialization.o build/move.o build/decode.o build/output.o build/checking.o
 	gcc -Wall -Werror build/checking.o build/main.o build/board_initialization.o build/move.o build/decode.o build/output.o -o bin/prog
